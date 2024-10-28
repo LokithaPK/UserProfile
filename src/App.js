@@ -1,23 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import UserProfile from './UserProfile'; 
 
 function App() {
+  const user = {
+    name: 'Lokitha PK',
+    email: 'lokitha181@example.com',
+    place:'Perundurai,Erode',
+    bio: 'A passionate developer who specializes in full-stack web development, with a keen interest in creating user-friendly and visually appealing applications.',
+    profileImage: `${process.env.PUBLIC_URL}/us.png`, 
+    skills: ['JavaScript', 'React', 'Node.js', 'CSS', 'HTML'],
+    social: {
+      github: 'https://github.com/LokithaPK',
+      linkedin: 'https://www.linkedin.com/in/lokitha-kandasamy-136568259/',
+      leetcode: 'https://leetcode.com/u/LOKITHA_PK/',  
+    },
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <UserProfile 
+        name={user.name}
+        email={user.email}
+        place={user.place}
+        bio={user.bio}
+        profileImage={user.profileImage}
+        skills={user.skills}
+        social={user.social}
+      />
     </div>
   );
 }
